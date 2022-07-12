@@ -34,5 +34,10 @@ def get_by_skill(skill_name):
     candidates = load_candidates()
     for k in candidates:
         if skill_name in k['skills']:
-            candidate_by_skill = f"{k['name']}"
+            candidate_by_skill = f"<pre> \n \
+                                    Имя кандидата - {k['name']}\n \
+                                    Позиция кандидата: {k['position']}\n \
+                                    Навыки через запятую: {k['skills']}\n \
+                                    \n \
+                                </pre>"
             return candidate_by_skill

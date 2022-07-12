@@ -1,6 +1,11 @@
+import json
+
+
 def load_candidates():
-    '''которая загрузит данные из файла'''
-    pass
+    """которая загрузит данные из файла"""
+    with open('candidates.json', mode='r', encoding='utf-8') as f:
+        candidates = json.load(f)
+    print(candidates)
 
 
 def get_all():

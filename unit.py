@@ -15,10 +15,14 @@ def get_all(candidates):
         return candidates_list
 
 
-
 def get_by_pk(pk):
     """которая вернет кандидата по pk"""
-    pass
+    candidates = load_candidates()
+    for j in candidates:
+        if pk == j['pk']:
+            candidate_pk = f"{j['name']}"
+            return candidate_pk
+
 
 def get_by_skill(skill_name):
     """которая вернет кандидатов по навыку"""

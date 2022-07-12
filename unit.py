@@ -26,4 +26,8 @@ def get_by_pk(pk):
 
 def get_by_skill(skill_name):
     """которая вернет кандидатов по навыку"""
-    pass
+    candidates = load_candidates()
+    for k in candidates:
+        if skill_name in k['skills']:
+            candidate_by_skill = f"{k['name']}"
+            return candidate_by_skill

@@ -1,5 +1,7 @@
 import json
 
+url = "http://mypictures.me/123"
+
 
 def load_candidates():
     """которая загрузит данные из файла"""
@@ -20,7 +22,8 @@ def get_by_pk(pk):
     candidates = load_candidates()
     for j in candidates:
         if pk == j['pk']:
-            candidate_by_pk = f"<pre> \n \
+            candidate_by_pk = f"<img src='({url})'> \n \
+                                <pre> \n \
                                     Имя кандидата - {j['name']}\n \
                                     Позиция кандидата: {j['position']}\n \
                                     Навыки через запятую: {j['skills']}\n \
@@ -34,7 +37,8 @@ def get_by_skill(skill_name):
     candidates = load_candidates()
     for k in candidates:
         if skill_name in k['skills']:
-            candidate_by_skill = f"<pre> \n \
+            candidate_by_skill = f"<img src='({url})'> \n \
+                                <pre> \n \
                                     Имя кандидата - {k['name']}\n \
                                     Позиция кандидата: {k['position']}\n \
                                     Навыки через запятую: {k['skills']}\n \

@@ -1,5 +1,5 @@
 from flask import Flask
-from utils import load_candidates, get_by_pk, get_by_skill
+from utils import load_candidates, get_by_pk, get_by_skill, url
 
 app = Flask(__name__)
 
@@ -9,7 +9,8 @@ def page_index():
     candidates = load_candidates()
     candidate_info = ' '
     for candidate in candidates:
-        candidate_info += f"<pre> \
+        candidate_info += f"<img src='({url})'> \n \
+                          <pre> \n \
                             Имя кандидата - {candidate['name']}\n \
                             Позиция кандидата: {candidate['position']}\n \
                             Навыки через запятую: {candidate['skills']}\n \

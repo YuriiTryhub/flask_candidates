@@ -9,13 +9,13 @@ def page_index():
     candidates = load_candidates()
     candidate_info = ' '
     for candidate in candidates:
-        candidate_info += f"<img src='({url})'> \n \
-                          <pre> \n \
-                            Имя кандидата - {candidate['name']}\n \
-                            Позиция кандидата: {candidate['position']}\n \
-                            Навыки через запятую: {candidate['skills']}\n \
-                            \n \
-                          </pre>"
+        candidate_info += f"""<img src='({url})'> \n
+                          <pre> \n
+                            {candidate['name']}\n
+                            {candidate['position']}\n
+                            {candidate['skills']}\n
+                            \n
+                          </pre>"""
     return candidate_info
 
 

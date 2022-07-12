@@ -1,4 +1,5 @@
 from flask import Flask
+from utils import load_candidates
 
 app = Flask(__name__)
 

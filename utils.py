@@ -20,8 +20,13 @@ def get_by_pk(pk):
     candidates = load_candidates()
     for j in candidates:
         if pk == j['pk']:
-            candidate_pk = f"{j['name']}"
-            return candidate_pk
+            candidate_by_pk = f"<pre> \n \
+                                    Имя кандидата - {j['name']}\n \
+                                    Позиция кандидата: {j['position']}\n \
+                                    Навыки через запятую: {j['skills']}\n \
+                                    \n \
+                                </pre>"
+            return candidate_by_pk
 
 
 def get_by_skill(skill_name):

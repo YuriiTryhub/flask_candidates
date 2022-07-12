@@ -1,5 +1,5 @@
 from flask import Flask
-from utils import load_candidates
+from utils import load_candidates, get_by_pk
 
 app = Flask(__name__)
 
@@ -17,6 +17,11 @@ def page_index():
                           </pre>"
     return candidate_info
 
+
+@app.route('/candidates/<int:x>')
+def profile(x):
+    pk_candidate = get_by_pk(x)
+    return pk_candidate
 
 app.run()
 
